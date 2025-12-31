@@ -1,9 +1,9 @@
-import Component1 from "./context/Component1";
+import Shop from "./product/shop";
 
 function App() {
   return (
     <>
-      <Component1 />
+      <Shop />
     </>
   );
 }
