@@ -1,9 +1,8 @@
-import Shop from "./shop/Shop";
-
+import AppRoutes from "./routes";
 function App() {
   return (
     <>
-      <Shop />
+      <AppRoutes />
     </>
   );
 }

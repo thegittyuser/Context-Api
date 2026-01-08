@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
+import Shop from "../shop/Shop";
+import Cart from "../shop/Cart";
 import { useState } from "react";
 
 function AppRoutes() {
-  const [cart, setCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = () => {
-    setCart((prev) => [...prev, cart]);
+  const addToCart = (item) => {
+    setCartItems((prev) => [...prev, item]);
   };
 
   return (
@@ -15,7 +17,7 @@ function AppRoutes() {
         <Header />
         <Routes>
           <Route path="/" element={<Shop addToCart={addToCart} />}></Route>
-          <Route path="/cart" element={<Cart cart={cart} />}></Route>
+          <Route path="/cart" element={<Cart cartItems={cartItems} />}></Route>
         </Routes>
       </Router>
     </>

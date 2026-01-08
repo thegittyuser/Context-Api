@@ -1,3 +1,5 @@
+import "./Shop.css";
+
 function Shop({ addToCart }) {
   const products = [
     { id: 1, title: "Product 1", price: 5000 },
@@ -6,20 +8,20 @@ function Shop({ addToCart }) {
     { id: 4, title: "Product 4", price: 5000 },
     { id: 5, title: "Product 5", price: 5000 },
   ];
+
   return (
-    <>
+    <div className="shop-container">
       {products.map((item) => (
-        <div
-          className="box"
-          style={{ border: "1px solid black" }}
-          key={item.id}
-        >
-          <h2>{item.title}</h2>
-          <h3>{item.price}</h3>
-          <button onClick={() => addToCart}>Add to Cart</button>
+        <div className="card" key={item.id}>
+          <h2 className="card-title">{item.title}</h2>
+          <h3 className="card-price">Rs {item.price}</h3>
+          <button className="card-btn" onClick={() => addToCart(item)}>
+            Add to Cart
+          </button>
         </div>
       ))}
-    </>
+    </div>
   );
 }
+
 export default Shop;
