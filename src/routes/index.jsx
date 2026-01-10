@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import Shop from "../shop/Shop";
 import Cart from "../shop/Cart";
 import { useState } from "react";
+import Checkout from "../shop/Checkout";
+import Orders from "../shop/Orders";
 
 function AppRoutes() {
   const [cartItems, setCartItems] = useState([]);
@@ -18,6 +20,14 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Shop addToCart={addToCart} />}></Route>
           <Route path="/cart" element={<Cart cartItems={cartItems} />}></Route>
+          <Route
+            path="/checkout"
+            element={<Checkout cartItems={cartItems} />}
+          ></Route>
+          <Route
+            path="/orders"
+            element={<Orders cartItems={cartItems} />}
+          ></Route>
         </Routes>
       </Router>
     </>

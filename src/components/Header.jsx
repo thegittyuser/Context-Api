@@ -23,6 +23,12 @@ function Header() {
       <Link to="/cart" style={linkStyle}>
         Cart
       </Link>
+      <Link to="/checkout" style={linkStyle}>
+        Checkout
+      </Link>
+      <Link to="/orders" style={linkStyle}>
+        Orders
+      </Link>
     </div>
   );
 }
